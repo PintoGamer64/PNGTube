@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="UTF-8" />
+  <title>Hello World!</title>
+  <link rel="stylesheet" href="styles/index.css" />
+  <link rel="stylesheet" href="styles/tolltip_bar.css">
+  <script defer src="scripts/index.js"></script>
+  <script defer src="scripts/SettingsMenu.js"></script>
+</head>
+
+<body>
+  <header id="topBar">
+    <div id="tolls">
+      <button class='tolltip_bar_buttons' id='settings'>
+        <img src="../resources/Settings.png" alt="Close-Window-Buttom" width="30" height="30" />
+      </button>
+    </div>
+    <header id='topWindowTollbar'>
+      <h3>PNGTube Studio</h3>
+    </header>
+    <div id="buttons">
+      <button class='tolltip_bar_buttons' id='minimize'>
+        <img src="../resources/_-icon.png" alt="Close-Window-Buttom" width="30" height="30" />
+      </button>
+      <button class='tolltip_bar_buttons' id='window'>
+        <img src="../resources/H-icon.png" alt="Close-Window-Buttom" width="18" height="18" />
+      </button>
+      <button class='tolltip_bar_buttons' id='close'>
+        <img src="../resources/X-icon.png" alt="Close-Window-Buttom" width="18" height="18" />
+      </button>
+    </div>
+  </header>
+  <!-- <main id="Main_App">
+
+  </main> -->
+  <div id="modalToll">
+    <div id="SettingsMenu">
+      <header id="Settings_options">
+        <button id="advanced">
+          <h2>Avanzado</h2>
+        </button>
+      </header>
+      <main id="Main_Settings">
+        <h2>Desabilitar Aceleracion por hardware</h2>
+        <button id="hard-acc">
+          🟢
+        </button>
+      </main>
+    </div>
+  </div>
+</body>
+
+</html>
