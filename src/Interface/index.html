@@ -37,26 +37,21 @@
   <!-- <main id="Main_App">
     
   </main> -->
-  <div id="modalToll">
+  <div id="modalToll" class="hide">
     <div id="SettingsMenu">
       <header id="Settings_options">
-        <button id="advanced" class="button_options">
+        <button id="advanced" class="button_options non-select">
           <h2>Avanzado</h2>
         </button>
-        <button id="interface" class="button_options">
+        <button id="interface" class="button_options select">
           <h2>Interfaz</h2>
+        </button>
+        <button id="modelos" class="button_options non-select">
+          <h2>Modelos</h2>
         </button>
       </header>
       <main id="Main_Settings">
-        <section id="Avanzado" class="preferences_options">
-          <div id="Aceleracion_Hardware" class="preferences">
-            <h2>Desabilitar Aceleracion por hardware</h2>
-            <button id="hard-acc">
-              🟢
-            </button>
-          </div>
-        </section>
-        <section id="Interfaz" class="preferences_options non-selected">
+        <section id="Interfaz" class="preferences_options">
           <div id="Imagen_Fondo" class="preferences">
             <h2>Carga o selecciona una imagen</h2>
             <button id="hard-acc">
@@ -65,6 +60,22 @@
           </div>
           <div id="Color_Fondo" class="preferences">
             <h2>Escoge el color de fondo que gustes</h2>
+            <button id="hard-acc">
+              🟢
+            </button>
+          </div>
+        </section>
+        <section id="Avanzado" class="preferences_options hide">
+          <div id="Aceleracion_Hardware" class="preferences">
+            <h2>Desabilitar Aceleracion por hardware</h2>
+            <button id="hard-acc">
+              🟢
+            </button>
+          </div>
+        </section>
+        <section id="Modelos" class="preferences_options hide">
+          <div id="Aceleracion_Hardware" class="preferences">
+            <h2>Insertar tus modelos PNG</h2>
             <button id="hard-acc">
               🟢
             </button>

@@ -1,16 +1,29 @@
 /*--------------------------- Global Use -----------------------------*/
-
-.non-selected {
-    display: none;
+.non-select {
+    margin: 0 10px;
 }
-
+.non-select:hover {
+    background-color: #ff000075;
+}
+.select {
+    margin: 0 40px;
+}
+.select::after {
+    content: '';
+    position: relative;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 2.5px;
+    background-color: #ff0000;
+}
 /*--------------------------- Normal Use -----------------------------*/
 
 #modalToll {
     z-index: 0;
     width: 100%;
-    height: 100%;
-    position: absolute;
+    height: 90%;
+    position: relative;
     top: 0;
     left: 0;
     margin: 0;
@@ -29,12 +42,19 @@
     width: 100%;
     height: 10%;
     display: flex;
+    align-items: flex-end;
     justify-content: center;
     border-bottom: 1px solid #000000;
 }
 
 .button_options {
-    height: 100%;
+    border-radius: 5px 5px 0 0;
+    border-top: 1px solid #000000;
+    border-left: 1px solid #000000;
+    border-right: 1px solid #000000;
+    border-bottom: none;
+    outline: none;
+    height: 80%;
     width: auto;
     display: grid;
     place-items: center;

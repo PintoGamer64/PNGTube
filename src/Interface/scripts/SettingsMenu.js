@@ -5,14 +5,25 @@ const hard_acc = document.getElementById('hard-acc');
 // Settings Menu
 const advanced = document.getElementById('advanced');
 const interface = document.getElementById('interface');
+const modelos = document.getElementById('modelos');
+// Childs
+const Avanzado = document.getElementById('Avanzado');
+const Interfaz = document.getElementById('Interfaz');
+const Modelos = document.getElementById('Modelos');
 
 let menus = [
     {
         id: 'advanced',
-        element: advanced
+        element: advanced,
+        child: Avanzado
     }, {
         id: 'interface',
-        element: interface
+        element: interface,
+        child: Interfaz
+    }, {
+        id: 'modelos',
+        element: modelos,
+        child: Modelos
     }
 ]
 
@@ -20,9 +31,6 @@ let menus = [
 let config, SettingsHide = true, hard_accState;
 
 // Initialize
-window.onload = () => {
-    modalToll.classList.add('hide')
-}
 window.pngtubeProcess.ActualSettings
     .then(res => {
         config = res
