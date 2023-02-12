@@ -2,13 +2,26 @@ const settingsBtn = document.getElementById('settings');
 const modalToll = document.getElementById('modalToll');
 const hard_acc = document.getElementById('hard-acc');
 
+// Settings Menu
+const advanced = document.getElementById('advanced');
+const interface = document.getElementById('interface');
+
+let menus = [
+    {
+        id: 'advanced',
+        element: advanced
+    }, {
+        id: 'interface',
+        element: interface
+    }
+]
+
 // States
 let config, SettingsHide = true, hard_accState;
 
 // Initialize
 window.onload = () => {
     modalToll.classList.add('hide')
-    hard_acc.removeEventListener('click', () => { })
 }
 window.pngtubeProcess.ActualSettings
     .then(res => {
@@ -32,20 +45,4 @@ settingsBtn.addEventListener('click', e => {
         return;
     }
     return modalToll.classList.add('hide');
-})
-
-hard_acc.addEventListener('click', e => {
-    console.log(config)
-    if (!config.appConfig.hardwareAcceleration) {
-        hard_accState = true;
-        hard_acc.innerHTML = '🟢'
-    }
-    if (config.appConfig.hardwareAcceleration) {
-        hard_accState = false;
-        hard_acc.innerHTML = '🔴'
-    }
-    console.log(hard_accState)
-    e.stopPropagation();
-    console.log('hard-acc')
-    window.pngtubeProcess.HarwareAcceleration(hard_accState)
 })

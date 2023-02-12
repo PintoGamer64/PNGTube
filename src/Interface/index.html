@@ -6,8 +6,10 @@
   <title>Hello World!</title>
   <link rel="stylesheet" href="styles/index.css" />
   <link rel="stylesheet" href="styles/tolltip_bar.css">
+  <link rel="stylesheet" href="styles/settings.css">
   <script defer src="scripts/index.js"></script>
   <script defer src="scripts/SettingsMenu.js"></script>
+  <script defer src="scripts/settings/advanced.js"></script>
 </head>
 
 <body>
@@ -33,20 +35,41 @@
     </div>
   </header>
   <!-- <main id="Main_App">
-
+    
   </main> -->
   <div id="modalToll">
     <div id="SettingsMenu">
       <header id="Settings_options">
-        <button id="advanced">
+        <button id="advanced" class="button_options">
           <h2>Avanzado</h2>
+        </button>
+        <button id="interface" class="button_options">
+          <h2>Interfaz</h2>
         </button>
       </header>
       <main id="Main_Settings">
-        <h2>Desabilitar Aceleracion por hardware</h2>
-        <button id="hard-acc">
-          🟢
-        </button>
+        <section id="Avanzado" class="preferences_options">
+          <div id="Aceleracion_Hardware" class="preferences">
+            <h2>Desabilitar Aceleracion por hardware</h2>
+            <button id="hard-acc">
+              🟢
+            </button>
+          </div>
+        </section>
+        <section id="Interfaz" class="preferences_options non-selected">
+          <div id="Imagen_Fondo" class="preferences">
+            <h2>Carga o selecciona una imagen</h2>
+            <button id="hard-acc">
+              🟢
+            </button>
+          </div>
+          <div id="Color_Fondo" class="preferences">
+            <h2>Escoge el color de fondo que gustes</h2>
+            <button id="hard-acc">
+              🟢
+            </button>
+          </div>
+        </section>
       </main>
     </div>
   </div>

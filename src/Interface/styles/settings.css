@@ -1,0 +1,46 @@
+/*--------------------------- Global Use -----------------------------*/
+
+.non-selected {
+    display: none;
+}
+
+/*--------------------------- Normal Use -----------------------------*/
+
+#modalToll {
+    z-index: 0;
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    top: 0;
+    left: 0;
+    margin: 0;
+    padding: 0;
+    display: grid;
+    place-items: center;
+}
+
+#SettingsMenu {
+    width: 80%;
+    height: 80%;
+    background-color: #ffffff;
+}
+
+#Settings_options {
+    width: 100%;
+    height: 10%;
+    display: flex;
+    justify-content: center;
+    border-bottom: 1px solid #000000;
+}
+
+.button_options {
+    height: 100%;
+    width: auto;
+    display: grid;
+    place-items: center;
+}
+
+.button_options h2 {
+    margin: 0;
+    padding: 0;
+}

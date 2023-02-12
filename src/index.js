@@ -34,7 +34,7 @@ function createWindow() {
     mainWindow.on('closed', () => mainWindow = null);
 
     mainWindow.webContents.on('did-finish-load', () => {
-        let imageOriginal = join(Settings.wallpapersPath, `${Settings.appBackground.wallpaper}.jpg`);
+        let imageOriginal = join(Settings.wallpapersPath, `${Settings.appBackground.wallpaper}.png`);
         let imageRender = '';
         imageOriginal.split('\\').map(rute => {
             imageRender.length < 1 ?
@@ -114,4 +114,5 @@ ipcMain.on('setHardwareAcceleration', (event, state) => {
 
 if (!Settings.appConfig.hardwareAcceleration) {
     app.disableHardwareAcceleration();
+    console.log('Aceleracion por hardware desabilitada')
 }
