@@ -20,4 +20,7 @@ code {
 .hide * {
   display: none;
   position: absolute;
+  outline: none;
+  border: none;
+  background: none;
 }

@@ -8,8 +8,10 @@
   <link rel="stylesheet" href="styles/tolltip_bar.css">
   <link rel="stylesheet" href="styles/settings.css">
   <script defer src="scripts/index.js"></script>
-  <script defer src="scripts/SettingsMenu.js"></script>
+  <script defer src="scripts/settings/load.js"></script>
   <script defer src="scripts/settings/advanced.js"></script>
+  <script defer src="scripts/settings/interface.js"></script>
+  <!-- CSS Dynamic Variables -->
 </head>
 
 <body>
@@ -40,11 +42,11 @@
   <div id="modalToll" class="hide">
     <div id="SettingsMenu">
       <header id="Settings_options">
-        <button id="advanced" class="button_options non-select">
-          <h2>Avanzado</h2>
-        </button>
         <button id="interface" class="button_options select">
           <h2>Interfaz</h2>
+        </button>
+        <button id="advanced" class="button_options non-select">
+          <h2>Avanzado</h2>
         </button>
         <button id="modelos" class="button_options non-select">
           <h2>Modelos</h2>
@@ -53,35 +55,59 @@
       <main id="Main_Settings">
         <section id="Interfaz" class="preferences_options">
           <div id="Imagen_Fondo" class="preferences">
-            <h2>Carga o selecciona una imagen</h2>
-            <button id="hard-acc">
-              🟢
-            </button>
+            <div class="_text">
+              <h2>Carga o selecciona una imagen</h2>
+            </div>
+            <div class="_config">
+              <img src="" id="Background_Image_Preview" width="100px" height="50px">
+              <button id="Background_Select">
+                Escoge tu imagen
+              </button>
+            </div>
+            <input type="file" id="Background_Upload" accept="image/png" hidden>
           </div>
           <div id="Color_Fondo" class="preferences">
-            <h2>Escoge el color de fondo que gustes</h2>
-            <button id="hard-acc">
-              🟢
-            </button>
+            <div class="_text">
+              <h2>Escoge el color de fondo que gustes</h2>
+            </div>
+            <div class="_config">
+              <input type="color" name="UI-Color" id="UI_Color">
+            </div>
           </div>
         </section>
         <section id="Avanzado" class="preferences_options hide">
           <div id="Aceleracion_Hardware" class="preferences">
-            <h2>Desabilitar Aceleracion por hardware</h2>
-            <button id="hard-acc">
-              🟢
-            </button>
+            <div class="_text">
+              <h2>Desabilitar Aceleracion por hardware</h2>
+            </div>
+            <div class="_config">
+              <button id="hard-acc">
+                🟢
+              </button>
+            </div>
           </div>
         </section>
         <section id="Modelos" class="preferences_options hide">
           <div id="Aceleracion_Hardware" class="preferences">
-            <h2>Insertar tus modelos PNG</h2>
-            <button id="hard-acc">
-              🟢
-            </button>
+            <div class="_text">
+              <h2>Insertar tus modelos PNG</h2>
+            </div>
+            <div class="_config">
+              <button id="hard-acc">
+                🟢
+              </button>
+            </div>
           </div>
         </section>
       </main>
+      <footer id="SettingsFooter_Options">
+        <button id="Restore" class="saveConfig_buttons">
+          <h2>Reestablecer</h2>
+        </button>
+        <button id="Save_Restart" class="saveConfig_buttons">
+          <h2>Guardar y Reinicar</h2>
+        </button>
+      </footer>
     </div>
   </div>
 </body>

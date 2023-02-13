@@ -4,8 +4,8 @@ const { ipcRenderer, contextBridge } = require('electron');
 function EventWindow(typeEvent = 'minimize' || 'close' || 'window') {
     ipcRenderer.send(typeEvent);
 }
-function HarwareAcceleration(state) {
-    ipcRenderer.send('setHardwareAcceleration', state)
+function SendUpdateConfig(state) {
+    ipcRenderer.send('NewConfig', state)
 }
 const ActualSettings = new Promise((resolve, reject) => {
     ipcRenderer.on('getSettings', (event, config) => {
@@ -29,6 +29,6 @@ contextBridge.exposeInMainWorld(
         EventWindow,
         BackgroundImage,
         ActualSettings,
-        HarwareAcceleration
+        SendUpdateConfig
     }
 );

@@ -90,25 +90,8 @@ ipcMain.on('close', () => {
     app.quit();
 });
 //Settings Events
-ipcMain.on('setHardwareAcceleration', (event, state) => {
-    if (!state) {
-        InsertConfig({
-            ...Settings,
-            appConfig: {
-                ...Settings.appConfig,
-                hardwareAcceleration: false
-            }
-        })
-        Restar_HardAcc();
-        return;
-    }
-    InsertConfig({
-        ...Settings,
-        appConfig: {
-            ...Settings.appConfig,
-            hardwareAcceleration: true
-        }
-    })
+ipcMain.on('NewConfig', (event, config) => {
+    InsertConfig(config)
     Restar_HardAcc();
 })
 
