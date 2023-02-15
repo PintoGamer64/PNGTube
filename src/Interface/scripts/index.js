@@ -16,6 +16,7 @@ const Background_Select = document.getElementById('Background_Select');
 //Input Select
 const Background_Upload = document.getElementById('Background_Upload');
 const UI_Color = document.getElementById('UI_Color');
+const Available_Images = document.getElementById('Available_Images');
 // Settings Menu
 const advanced = document.getElementById('advanced');
 const interface = document.getElementById('interface');
@@ -43,9 +44,16 @@ let menus = [
 ]
 
 window.pngtubeProcess.BackgroundImage
-    .then(({ image, color }) => {
+    .then(({ image, color, wallpapers }) => {
         document.body.style.backgroundColor = color
         document.body.style.backgroundImage = `url("${image}")`
+        // Bakcground Images Process
+        for (let i = 0; i < wallpapers.length; i++) {
+            //Available_Images
+            Available_Images.innerHTML += `
+            <option value="${wallpapers[i].split('.png')[0]}">${wallpapers[i].split('.png')[0]}</option>
+            `
+        }
     });
 
 // Functions

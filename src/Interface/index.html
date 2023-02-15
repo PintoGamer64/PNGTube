@@ -56,12 +56,13 @@
         <section id="Interfaz" class="preferences_options">
           <div id="Imagen_Fondo" class="preferences">
             <div class="_text">
-              <h2>Carga o selecciona una imagen</h2>
+              <h2>Carga una imagen de fondo</h2>
             </div>
             <div class="_config">
-              <img src="" id="Background_Image_Preview" width="100px" height="50px">
+              <select name="Available_Images" id="Available_Images" value="Default">
+              </select>
               <button id="Background_Select">
-                Escoge tu imagen
+                <img src="" id="Background_Image_Preview" width="100px" height="50px">
               </button>
             </div>
             <input type="file" id="Background_Upload" accept="image/png" hidden>

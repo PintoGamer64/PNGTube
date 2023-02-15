@@ -14,10 +14,11 @@ const ActualSettings = new Promise((resolve, reject) => {
     })
 }).catch(err => console.log(err))
 const BackgroundImage = new Promise((resolve, reject) => {
-    ipcRenderer.on('getAppBackground', (event, { image, color }) => {
+    ipcRenderer.on('getAppBackground', (event, { image, color, wallpapers }) => {
         resolve({
             image,
-            color
+            color,
+            wallpapers
         })
         reject(new Error('Contenido no encontrado'))
     })

@@ -1,5 +1,6 @@
 // Node Modules
 const { app, BrowserWindow, ipcMain, dialog } = require('electron');
+const { readdirSync } = require('node:fs');
 const { homedir } = require('os');
 const { join } = require('path');
 
@@ -20,8 +21,10 @@ let mainWindow;
 
 function createWindow() {
     mainWindow = new BrowserWindow({
-        width: 900,
-        height: 680,
+        minWidth: 800,
+        minHeight: 680,
+        width: 1000,
+        height: 780,
         titleBarStyle: 'hidden',
         webPreferences: {
             images: true,
@@ -44,9 +47,10 @@ function createWindow() {
         })
         mainWindow.webContents.send('getAppBackground', {
             image: imageRender,
-            color: Settings.appBackground.colorBackground
+            color: Settings.appBackground.colorBackground,
+            wallpapers: readdirSync(join(Settings.wallpapersPath), { encoding: 'utf-8' })
         })
-        mainWindow.webContents.send('getSettings', Settings)
+        mainWindow.webContents.send('getSettings', Settings);
     })
 }
 

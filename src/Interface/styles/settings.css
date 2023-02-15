@@ -88,12 +88,24 @@
     padding: 0;
 }
 
+#Available_Images {
+    width: 100px;
+    text-align: center;
+    margin: 0 10px 0 0;
+}
+
 #Background_Select {
+    padding: 0;
     width: 100px;
     height: 50px;
     border: none;
     outline: 1px solid #000000;
-    background-color: none;
+}
+
+#Background_Select h2 {
+    position: absolute;
+    display: grid;
+    place-items: center;
 }
 
 #Background_Image_Preview {
@@ -101,8 +113,13 @@
     height: 50px;
     max-width: 100px;
     max-height: 50px;
-    outline: 1px solid #000000; 
+    outline: 1px solid #000000;
 }
+
+#Background_Select:hover {
+    outline: 2px solid #ff0000;
+}
+
 
 .saveConfig_buttons {
     height: 80%;
@@ -135,15 +152,17 @@
     text-align: left;
     justify-content: space-around;
 }
+
 ._text {
     width: 60%;
     display: flex;
     flex-direction: row;
     text-align: start;
 }
+
 ._config {
     width: 40%;
     display: flex;
     align-items: center;
-    justify-content: space-evenly;
+    justify-content: flex-end;
 }
