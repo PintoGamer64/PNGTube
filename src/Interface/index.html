@@ -56,10 +56,10 @@
         <section id="Interfaz" class="preferences_options">
           <div id="Imagen_Fondo" class="preferences">
             <div class="_text">
-              <h2>Carga una imagen de fondo</h2>
+              <h2>Imagen de fondo</h2>
             </div>
             <div class="_config">
-              <select name="Available_Images" id="Available_Images" value="Default">
+              <select name="Available_Images" id="Available_Images">
               </select>
               <button id="Background_Select">
                 <img src="" id="Background_Image_Preview" width="100px" height="50px">
@@ -69,17 +69,26 @@
           </div>
           <div id="Color_Fondo" class="preferences">
             <div class="_text">
-              <h2>Escoge el color de fondo que gustes</h2>
+              <h2>Color de fondo</h2>
             </div>
             <div class="_config">
               <input type="color" name="UI-Color" id="UI_Color">
+            </div>
+          </div>
+          <div id="AppZoom" class="preferences">
+            <div class="_text">
+              <h2>Zoom</h2>
+            </div>
+            <div class="_config">
+              <input type="range" value="100" accept="75,100,150" name="" id="inputRange" min="75" max="150" step="25">
+              <label id="inputRange_label"></label>
             </div>
           </div>
         </section>
         <section id="Avanzado" class="preferences_options hide">
           <div id="Aceleracion_Hardware" class="preferences">
             <div class="_text">
-              <h2>Desabilitar Aceleracion por hardware</h2>
+              <h2>Aceleracion por hardware</h2>
             </div>
             <div class="_config">
               <button id="hard-acc">

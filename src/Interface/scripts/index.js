@@ -9,6 +9,7 @@ const Save_Restart = document.getElementById('Save_Restart');
 const root = document.querySelector(':root');
 const head = document.querySelector('head');
 const SettingsMenu = document.getElementById('SettingsMenu');
+const AllText = document.getElementsByClassName('colored')
 // Operations
 const settingsBtn = document.getElementById('settings');
 const hard_acc = document.getElementById('hard-acc');
@@ -17,6 +18,8 @@ const Background_Select = document.getElementById('Background_Select');
 const Background_Upload = document.getElementById('Background_Upload');
 const UI_Color = document.getElementById('UI_Color');
 const Available_Images = document.getElementById('Available_Images');
+const zoomRange = document.getElementById('inputRange');
+const inputRange_label = document.getElementById('inputRange_label');
 // Settings Menu
 const advanced = document.getElementById('advanced');
 const interface = document.getElementById('interface');
@@ -44,14 +47,14 @@ let menus = [
 ]
 
 window.pngtubeProcess.BackgroundImage
-    .then(({ image, color, wallpapers }) => {
+    .then(({ image, color, wallpapers, select }) => {
         document.body.style.backgroundColor = color
         document.body.style.backgroundImage = `url("${image}")`
         // Bakcground Images Process
         for (let i = 0; i < wallpapers.length; i++) {
             //Available_Images
             Available_Images.innerHTML += `
-            <option value="${wallpapers[i].split('.png')[0]}">${wallpapers[i].split('.png')[0]}</option>
+            <option value="${wallpapers[i].split('.png')[0]}" ${wallpapers[i].includes(select) ? 'selected' : '' }>${wallpapers[i].split('.png')[0]}</option>
             `
         }
     });

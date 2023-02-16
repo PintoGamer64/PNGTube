@@ -1,7 +1,7 @@
 /*--------------------------- Global Use -----------------------------*/
 
 .non-select:hover {
-    background-color: var(--UI-Style-Color-Grad);
+    background-color: #00000060;
 }
 
 .select {
@@ -11,7 +11,8 @@
     left: 0;
     width: 100%;
     height: 5px;
-    background-color: var(--UI-Style-Color);
+    color: #ffffff;
+    background-color: #000000;
 }
 
 #SettingsMenu,
@@ -46,11 +47,13 @@
     display: flex;
     flex-direction: column;
     align-items: center;
+    outline: 2px solid #000000;
 }
 
 #Main_Settings {
     width: 100%;
     height: 80%;
+    max-width: 650px;
     border-bottom: 1px solid #000000;
 }
 
@@ -117,7 +120,7 @@
 }
 
 #Background_Select:hover {
-    outline: 2px solid #ff0000;
+    outline: 2px solid #000000;
 }
 
 
@@ -134,7 +137,8 @@
 }
 
 #Save_Restart {
-    background-color: var(--UI-Style-Color);
+    color: #ffffff;
+    background-color: #000000;
 }
 
 .preferences_options {
@@ -165,4 +169,12 @@
     display: flex;
     align-items: center;
     justify-content: flex-end;
+}
+
+#inputRange {
+    margin: 0 15px 0 0;
+}
+
+#inputRange::-webkit-slider-runnable-track {
+    height: 16px;
 }

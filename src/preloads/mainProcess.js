@@ -1,11 +1,20 @@
 // Node Modules
-const { ipcRenderer, contextBridge } = require('electron');
+const { ipcRenderer, contextBridge, webFrame } = require('electron');
 
 function EventWindow(typeEvent = 'minimize' || 'close' || 'window') {
     ipcRenderer.send(typeEvent);
 }
 function SendUpdateConfig(state) {
     ipcRenderer.send('NewConfig', state)
+}
+function uploadBackground(image_url, image_name) {
+    ipcRenderer.send('uploadBackground', {
+        image_url,
+        image_name
+    })
+}
+function ZoomFactor(value) {
+    webFrame.setZoomFactor(value);
 }
 const ActualSettings = new Promise((resolve, reject) => {
     ipcRenderer.on('getSettings', (event, config) => {
@@ -14,11 +23,12 @@ const ActualSettings = new Promise((resolve, reject) => {
     })
 }).catch(err => console.log(err))
 const BackgroundImage = new Promise((resolve, reject) => {
-    ipcRenderer.on('getAppBackground', (event, { image, color, wallpapers }) => {
+    ipcRenderer.on('getAppBackground', (event, { image, color, wallpapers, select }) => {
         resolve({
             image,
             color,
-            wallpapers
+            wallpapers,
+            select
         })
         reject(new Error('Contenido no encontrado'))
     })
@@ -30,6 +40,8 @@ contextBridge.exposeInMainWorld(
         EventWindow,
         BackgroundImage,
         ActualSettings,
-        SendUpdateConfig
+        SendUpdateConfig,
+        uploadBackground,
+        ZoomFactor
     }
 );

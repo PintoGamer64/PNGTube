@@ -1,6 +1,6 @@
 // Node Modules
-const { app, BrowserWindow, ipcMain, dialog } = require('electron');
-const { readdirSync } = require('node:fs');
+const { app, BrowserWindow, ipcMain, dialog, Tray, Menu } = require('electron');
+const { readdirSync, copyFileSync } = require('node:fs');
 const { homedir } = require('os');
 const { join } = require('path');
 
@@ -27,7 +27,6 @@ function createWindow() {
         height: 780,
         titleBarStyle: 'hidden',
         webPreferences: {
-            images: true,
             devTools: true,
             nodeIntegration: true,
             preload: join(__dirname, './preloads/mainProcess.js')
@@ -35,6 +34,8 @@ function createWindow() {
     });
     mainWindow.loadURL(`${join(__dirname, 'Interface/index.html')}`);
     mainWindow.on('closed', () => mainWindow = null);
+
+    mainWindow.setHasShadow(true)
 
     mainWindow.webContents.on('did-finish-load', () => {
         let imageOriginal = join(Settings.wallpapersPath, `${Settings.appBackground.wallpaper}.png`);
@@ -48,6 +49,7 @@ function createWindow() {
         mainWindow.webContents.send('getAppBackground', {
             image: imageRender,
             color: Settings.appBackground.colorBackground,
+            select: Settings.appBackground.wallpaper,
             wallpapers: readdirSync(join(Settings.wallpapersPath), { encoding: 'utf-8' })
         })
         mainWindow.webContents.send('getSettings', Settings);
@@ -68,6 +70,15 @@ function Restar_HardAcc() {
 
 app.on('ready', () => {
     createWindow();
+    let tray = new Tray('c:/Users/Joan Cardozoç/Documents/vampaeiou.png')
+    const contextMenu = Menu.buildFromTemplate([
+        { label: 'Item1', type: 'normal', icon: 'c:/Users/Joan Cardozoç/Downloads/example.png' },
+        { label: 'Item2', type: 'radio' },
+        { label: 'Item3', type: 'radio', checked: true },
+        { label: 'Item4', type: 'radio' }
+    ])
+    tray.setToolTip('This is my application.')
+    tray.setContextMenu(contextMenu)
 });
 
 app.on('window-all-closed', () => {
@@ -98,6 +109,10 @@ ipcMain.on('NewConfig', (event, config) => {
     InsertConfig(config)
     Restar_HardAcc();
 })
+ipcMain.on('uploadBackground', (event, { image_url, image_name }) => {
+    copyFileSync(image_url, join(Settings.wallpapersPath, image_name))
+})
+
 
 if (!Settings.appConfig.hardwareAcceleration) {
     app.disableHardwareAcceleration();
