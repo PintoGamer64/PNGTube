@@ -34,9 +34,3 @@ UI_Color.addEventListener('change', (e) => {
     config.appBackground.colorBackground = e.target.value;
     head.appendChild(newStyle);
 });
-zoomRange.addEventListener('change', (event) => {
-    window.pngtubeProcess.ZoomFactor(event.target.value / 100);
-    console.log(event.target.value / 100);
-    inputRange_label.innerText = `${event.target.value} %`;
-    config.appConfig.zoomApplication = event.target.value / 100;
-})

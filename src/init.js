@@ -15,7 +15,6 @@ function InitProcess() {
         },
         appConfig: {
             hardwareAcceleration: true,
-            zoomApplication: 100, // Percentage Value
             trayMenu: true,
             menuHideStyle: 'None', // None | Hover
             lenguaje: 'spanish', // English Declarations

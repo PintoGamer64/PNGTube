@@ -170,11 +170,3 @@
     align-items: center;
     justify-content: flex-end;
 }
-
-#inputRange {
-    margin: 0 15px 0 0;
-}
-
-#inputRange::-webkit-slider-runnable-track {
-    height: 16px;
-}

@@ -18,9 +18,6 @@ window.pngtubeProcess.ActualSettings
         modalToll.style.display = 'none';
         // Image Preview
         Background_Image_Preview.setAttribute('src', `${res.wallpapersPath}\\${res.appBackground.wallpaper}.png`)
-        window.pngtubeProcess.ZoomFactor(res.appConfig.zoomApplication)
-        zoomRange.attributes.value.value = res.appConfig.zoomApplication * 100;
-        inputRange_label.innerText = `${zoomRange.attributes.value.value} %`
     })
 
 advanced.addEventListener('click', () => {

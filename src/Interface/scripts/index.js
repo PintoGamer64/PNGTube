@@ -18,8 +18,6 @@ const Background_Select = document.getElementById('Background_Select');
 const Background_Upload = document.getElementById('Background_Upload');
 const UI_Color = document.getElementById('UI_Color');
 const Available_Images = document.getElementById('Available_Images');
-const zoomRange = document.getElementById('inputRange');
-const inputRange_label = document.getElementById('inputRange_label');
 // Settings Menu
 const advanced = document.getElementById('advanced');
 const interface = document.getElementById('interface');
